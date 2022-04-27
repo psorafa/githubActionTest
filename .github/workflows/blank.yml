@@ -22,7 +22,8 @@ jobs:
       - name: Log files added
         run: |
           cat $HOME/files_added.txt
-          echo 'basename ${{ steps.file_changes.outputs.files_added}}' >> tomas.txt
+          basename = $(basename ${{ steps.file_changes.outputs.files_added}})
+          echo '${basename}' >> tomas.txt
       - name: Commit changes
         run: |
           git config --global user.name "psorafa"
