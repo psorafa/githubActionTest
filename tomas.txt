@@ -6,3 +6,4 @@ basename src/abc copy 4.cls
 ${basename}
 
 
+abc copy 9.cls
