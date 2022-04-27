@@ -6,15 +6,22 @@ jobs:
   changes:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2.3.2
       - id: file_changes
         uses: trilom/file-changes-action@v1.2.3
-      - name: test
+        with:
+          output: ' '
+          fileOutput: ' '
+      - name: Log files added
         run: |
-          cat $HOME/files.json
-          cat $HOME/files_modified.json
-          cat $HOME/files_added.json
-          cat $HOME/files_removed.json
-          echo '${{ steps.file_changes.outputs.files}}'
-          echo '${{ steps.file_changes.outputs.files_modified}}'
-          echo '${{ steps.file_changes.outputs.files_added}}'
-          echo '${{ steps.file_changes.outputs.files_removed}}'
+          cat $HOME/files_added.txt
+          echo '${{ steps.file_changes.outputs.files_added}}' >> tomas.txt
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "vojtik"
+          git config --global user.email "vojtik@sadlomaslo"
+
+          git add tomas.txt
+          git commit -m "commit message"
+          git push
