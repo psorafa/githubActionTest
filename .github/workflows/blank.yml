@@ -17,15 +17,16 @@ jobs:
       - id: file_changes
         uses: trilom/file-changes-action@v1.2.3
         with:
-          output: '\n'
-          fileOutput: \n'
+          output: ','
+          fileOutput: ','
       - name: Log files added
         run: |
           cat $HOME/files_added.txt
-          for i in "${{ steps.file_changes.outputs.files_added}}"; do
+          IFS=',' read -ra ADDR <<< "${{ steps.file_changes.outputs.files_added}}"
+          for i in "${ADDR[@]}"; do
           echo "$i"
           done
-          echo $(basename -- "${{ steps.file_changes.outputs.files_added}}") >> tomas.txt
+          echo $(basename -- "$i") >> tomas.txt
       - name: Commit changes
         run: |
           git config --global user.name "psorafa"
