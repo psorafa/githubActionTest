@@ -24,9 +24,8 @@ jobs:
           cat $HOME/files_added.csv
           IFS=',' read -ra ADDR <<< "${{ steps.file_changes.outputs.files_added}}"
           for i in "${ADDR[@]}"; do
-          echo "$i"
-          done
           echo $(basename -- "$i") >> tomas.txt
+          done
       - name: Commit changes
         run: |
           git config --global user.name "psorafa"
