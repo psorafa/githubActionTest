@@ -4,7 +4,6 @@ name: push-develop
 on:
   push:
     paths:
-    - 'src/**'
     - '**.cls'
 jobs:
   changes:
@@ -29,7 +28,7 @@ jobs:
           git config --global user.name "psorafa"
           git config --global user.email "cauchemar00@gmail.com"
           git add tomas.txt
-          git commit -m "commit message"
+          git commit -m "Update tomas.txt"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
