@@ -7,3 +7,4 @@ ${basename}
 
 
 abc copy 9.cls
+abc copy 12.cls
