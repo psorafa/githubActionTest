@@ -10,3 +10,8 @@ abc copy 9.cls
 abc copy 12.cls
 abc copy 17.cls
 abc copy 27.cls
+abc copy 28.cls
+abc copy 29.cls
+abc copy 30.cls
+abc copy 31.cls
+abc copy 32.cls
