@@ -19,8 +19,6 @@ jobs:
           echo '${{ steps.file_changes.outputs.files_added}}' >> tomas.txt
       - name: Commit and push changes
         run: |
-          git config --global user.name "vojtik"
-          git config --global user.email "vojtik@sadlomaslo"
 
           git add tomas.txt
           git commit -m "commit message"
