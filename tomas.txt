@@ -2,3 +2,4 @@
 src/.DS_Store src/abc copy.cls
 src/abc copy 2.cls
 basename src/abc copy 3.cls
+basename src/abc copy 4.cls
