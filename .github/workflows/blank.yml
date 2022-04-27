@@ -1,7 +1,11 @@
 # This is a basic workflow to help you get started with Actions
 
 name: push-develop
-on: [push]
+on:
+  push:
+    paths:
+    - 'src/**'
+    - '**.cls'
 jobs:
   changes:
     runs-on: ubuntu-latest
