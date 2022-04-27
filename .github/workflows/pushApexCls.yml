@@ -1,6 +1,5 @@
-# This is a basic workflow to help you get started with Actions
 
-name: push-develop
+name: push-apex-classes
 on:
   push:
     paths:
@@ -19,7 +18,7 @@ jobs:
         with:
           output: ','
           fileOutput: ','
-      - name: Log files added
+      - name: Log added files
         run: |
           cat $HOME/files_added.csv
           IFS=',' read -ra ADDR <<< "${{ steps.file_changes.outputs.files_added}}"
