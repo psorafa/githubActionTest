@@ -21,7 +21,7 @@ jobs:
           fileOutput: ','
       - name: Log files added
         run: |
-          cat $HOME/files_added.txt
+          cat $HOME/files_added.csv
           IFS=',' read -ra ADDR <<< "${{ steps.file_changes.outputs.files_added}}"
           for i in "${ADDR[@]}"; do
           echo "$i"
