@@ -1,9 +1,12 @@
+# set up TOKEN in secrets (must have repo access)
 
 name: push-apex-classes
 on:
   pull_request:
     types:
       - opened
+    branches:
+      - 'vojtas/**' # change this prefix
 jobs:
   changes:
     runs-on: ubuntu-latest
@@ -18,16 +21,16 @@ jobs:
         with:
           output: ','
           fileOutput: ','
-      - name: Log added files
+      - name: Log added files # add filter on extensions
         run: |
           cat $HOME/files_added.csv
           IFS=',' read -ra ADDR <<< "${{ steps.file_changes.outputs.files_added}}"
           for i in "${ADDR[@]}"; do
           echo $(basename -- "$i") >> itk-wecoach/itk-dev/package-configuration/metadata2include.txt
           done
-      - name: Commit changes
+      - name: Commit changes  # change credentials
         run: |
-          git config --global user.name "psorafa"
+          git config --global user.name "psorafa" 
           git config --global user.email "cauchemar00@gmail.com"
           git add itk-wecoach/itk-dev/package-configuration/metadata2include.txt
           git commit -m "Update metadata2include.txt"
@@ -35,4 +38,4 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.TOKEN }}
-          branch: ${{ github.head_ref }}
+          branch: ${{ github.head_ref }} # in case this is on push event change to github.ref
