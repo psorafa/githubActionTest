@@ -13,3 +13,15 @@ seasd copy.txt
 test copy.md
 tomas copy.txt
 wfdwe copy.md
+randomshit3 copy 5.css
+seasd copy 3.txt
+seasd copy 4.txt
+seasd copy 5.txt
+test copy 3.md
+test copy 4.md
+tomas copy 3.txt
+tomas copy 4.txt
+wfdwe copy 3.md
+wfdwe copy 4.md
+wfdwe copy 5.md
+wfdwe copy 6.md
