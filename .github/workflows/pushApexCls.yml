@@ -14,6 +14,17 @@ on:
     - '**.css'
     branches:
       - 'vojtas/**'
+  pull_request:
+    paths:
+    - '**.cls'
+    - '**.object'
+    - '**.trigger'
+    - '**.flow'
+    - '**.page'
+    - '**.js'
+    - '**.html'
+    - '**.md'
+    - '**.css'
 jobs:
   changes:
     runs-on: ubuntu-latest
