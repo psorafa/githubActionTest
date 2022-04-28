@@ -23,14 +23,15 @@ jobs:
         with:
           persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
           fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
-      - name: File changes
-        uses: Ana06/get-changed-files@v2.1.0
+      - name: File Changes
+        uses: trilom/file-changes-action@v1.2.3
         with:
-          format: 'csv'
-          filter: '*'
+          output: ','
+          fileOutput: ','
       - name: Log added files
         run: |
-          IFS=',' read -ra ADDR <<< "${{ steps.files.outputs.added}}"
+          cat $HOME/files_added.csv
+          IFS=',' read -ra ADDR <<< "${{ steps.file_changes.outputs.files_added }}"
           for i in "${ADDR[@]}"; do
           echo $(basename -- "$i") >> itk-wecoach/itk-dev/package-configuration/metadata2include.txt
           done
