@@ -8,3 +8,8 @@ randomshit3 copy 4.css
 randomshit copy 3.css
 randomshit2 copy 4.css
 randomshit3 copy 5.css
+randomshit3 copy 3.css
+seasd copy.txt
+test copy.md
+tomas copy.txt
+wfdwe copy.md
