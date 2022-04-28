@@ -4,18 +4,6 @@ on:
   pull_request:
     types:
       - opened
-    paths:
-      - '**.cls'
-      - '**.object'
-      - '**.trigger'
-      - '**.flow'
-      - '**.page'
-      - '**.js'
-      - '**.html'
-      - '**.md'
-      - '**.css'
-    branches:
-      - 'vojtas/**'
 jobs:
   changes:
     runs-on: ubuntu-latest
