@@ -31,7 +31,7 @@ jobs:
       - name: Log added files
         run: |
           cat $HOME/files_added.csv
-          IFS=',' read -ra ADDR <<< "${{ steps.file_changes.outputs.files_added}}"
+          IFS=',' read -ra ADDR <<< '${{ steps.file_changes.outputs.files_added}}'
           for i in "${ADDR[@]}"; do
           echo $(basename -- "$i") >> itk-wecoach/itk-dev/package-configuration/metadata2include.txt
           done
