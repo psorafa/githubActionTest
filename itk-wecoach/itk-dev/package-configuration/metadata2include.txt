@@ -2,4 +2,6 @@ randomshit2 copy 2.css
 metadata2include.txt
 superclass.cls
 superobject.object.cls
-randomshit.css
+randomshit.cssrandomshit copy 2.css
+randomshit2 copy 3.css
+randomshit3 copy 4.css
