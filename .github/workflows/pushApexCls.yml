@@ -4,6 +4,16 @@ on:
   push:
     paths:
     - '**.cls'
+    - '**.object'
+    - '**.trigger'
+    - '**.flow'
+    - '**.page'
+    - '**.js'
+    - '**.html'
+    - '**.md'
+    - '**.css'
+    branches:
+      - 'vojtas/**'
 jobs:
   changes:
     runs-on: ubuntu-latest
@@ -23,14 +33,14 @@ jobs:
           cat $HOME/files_added.csv
           IFS=',' read -ra ADDR <<< "${{ steps.file_changes.outputs.files_added}}"
           for i in "${ADDR[@]}"; do
-          echo $(basename -- "$i") >> tomas.txt
+          echo $(basename -- "$i") >> itk-wecoach/itk-dev/package-configuration/metadata2include.txt
           done
       - name: Commit changes
         run: |
           git config --global user.name "psorafa"
           git config --global user.email "cauchemar00@gmail.com"
-          git add tomas.txt
-          git commit -m "Update tomas.txt"
+          git add itk-wecoach/itk-dev/package-configuration/metadata2include.txt
+          git commit -m "Update metadata2include.txt"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
