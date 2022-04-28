@@ -23,7 +23,7 @@ jobs:
         with:
           persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
           fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
-      - id: file_changes
+      - name: File Changes
         uses: trilom/file-changes-action@v1.2.3
         with:
           output: ','
