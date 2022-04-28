@@ -1,0 +1,3 @@
+metadata2include.txt
+superclass.cls
+superobject.object.cls
