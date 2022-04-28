@@ -2,16 +2,18 @@
 name: push-apex-classes
 on:
   pull_request:
+    types:
+      - opened
     paths:
-    - '**.cls'
-    - '**.object'
-    - '**.trigger'
-    - '**.flow'
-    - '**.page'
-    - '**.js'
-    - '**.html'
-    - '**.md'
-    - '**.css'
+      - '**.cls'
+      - '**.object'
+      - '**.trigger'
+      - '**.flow'
+      - '**.page'
+      - '**.js'
+      - '**.html'
+      - '**.md'
+      - '**.css'
     branches:
       - 'vojtas/**'
 jobs:
