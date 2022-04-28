@@ -34,6 +34,7 @@ jobs:
           IFS=',' read -ra ADDR <<< "${{ steps.file_changes.outputs.files_added}}"
           for i in "${ADDR[@]}"; do
           echo $(basename -- "$i") >> itk-wecoach/itk-dev/package-configuration/metadata2include.txt
+          cat itk-wecoach/itk-dev/package-configuration/metadata2include.txt
           done
       - name: Commit changes
         run: |
