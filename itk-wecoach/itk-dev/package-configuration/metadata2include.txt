@@ -5,3 +5,6 @@ superobject.object.cls
 randomshit.cssrandomshit copy 2.css
 randomshit2 copy 3.css
 randomshit3 copy 4.css
+randomshit copy 3.css
+randomshit2 copy 4.css
+randomshit3 copy 5.css
