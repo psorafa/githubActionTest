@@ -13,3 +13,5 @@ seasd copy.txt
 test copy.md
 tomas copy.txt
 wfdwe copy.md
+randomshit3 copy 3.css
+randomshit3 copy 5.css
